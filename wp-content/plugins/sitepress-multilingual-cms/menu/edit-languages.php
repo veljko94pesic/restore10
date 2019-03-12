@@ -422,7 +422,9 @@ class SitePress_EditLanguages {
 
 	function update_main_table($id, $code, $default_locale, $encode_url, $tag){
 		global $wpdb;
-    $wpdb->update($wpdb->prefix . 'icl_languages', array('code' => $code, 'default_locale' => $default_locale, 'encode_url'=>$encode_url, 'tag' => $tag), array('ID' => $id));
+
+	$wpdb->update($wpdb->prefix . 'icl_languages', array('code' => $code, 
+	'default_locale' => $default_locale, 'encode_url'=>$encode_url, 'tag' => $tag), array('id' => $id), null, array( '%d' ));
 	}
 
 	function insert_translation($name, $language_code, $display_language_code) {
